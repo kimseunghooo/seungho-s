@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤찬욱 9등급 키우기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2016/07/21/22/55/clouds-1532396_960_720.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: navy;
+        }
+        #counter {
+            font-size: 24px;
+            font-weight: bold;
+            color: dodgerblue;
+        }
+        #examScore {
+            font-size: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: dodgerblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>윤찬욱 9등급 키우기</h1>
+    <p>윤찬욱 시험 기간까지 <span id="counter"></span> 남았습니다.</p>
+    <p>현재 시험 점수: <span id="examScore">100</span></p>
+    <button class="button" onclick="playLoL()">롤 하기</button>
+    <button class="button" onclick="playBrawl()">브롤 하기</button>
+
+    <script>
+        let examScore = 100;
+        let remainingDays = 29;
+
+        // 카운터 표시
+        document.getElementById('counter').textContent = remainingDays + "일";
+
+        function playLoL() {
+            if (examScore <= 0) {
+                alert("게임 종료! 시험 점수: 0\n축하합니다! 9등급 달성!");
+                return;
+            }
+            examScore -= 10;
+            document.getElementById('examScore').textContent = examScore;
+            remainingDays--;
+            document.getElementById('counter').textContent = remainingDays + "일";
+            alert("롤 하기! 시험 점수: " + examScore);
+        }
+
+        function playBrawl() {
+            if (examScore <= 0) {
+                alert("게임 종료! 시험 점수: 0\n축하합니다! 9등급 달성!");
+                return;
+            }
+            examScore -= 10;
+            document.getElementById('examScore').textContent = examScore;
+            remainingDays--;
+            document.getElementById('counter').textContent = remainingDays + "일";
+            alert("브롤 하기! 시험 점수: " + examScore);
+        }
+    </script>
+</body>
+</html>
